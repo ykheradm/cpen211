@@ -1,0 +1,147 @@
+|top_incr
+KEY[0] => Fcount:P1.clock
+KEY[1] => Fcount:P1.RESET
+SW[0] => Fcount:P1.D[0]
+SW[1] => Fcount:P1.D[1]
+SW[2] => Fcount:P1.D[2]
+SW[3] => Fcount:P1.D[3]
+HEX0[0] <= DispHEX:P2.Y0[0]
+HEX0[1] <= DispHEX:P2.Y0[1]
+HEX0[2] <= DispHEX:P2.Y0[2]
+HEX0[3] <= DispHEX:P2.Y0[3]
+HEX0[4] <= DispHEX:P2.Y0[4]
+HEX0[5] <= DispHEX:P2.Y0[5]
+HEX0[6] <= DispHEX:P2.Y0[6]
+HEX1[0] <= DispHEX:P2.Y1[0]
+HEX1[1] <= DispHEX:P2.Y1[1]
+HEX1[2] <= DispHEX:P2.Y1[2]
+HEX1[3] <= DispHEX:P2.Y1[3]
+HEX1[4] <= DispHEX:P2.Y1[4]
+HEX1[5] <= DispHEX:P2.Y1[5]
+HEX1[6] <= DispHEX:P2.Y1[6]
+
+
+|top_incr|Fcount:P1
+clock => s[0].CLK
+clock => s[1].CLK
+clock => s[2].CLK
+clock => s[3].CLK
+clock => s[4].CLK
+clock => s[5].CLK
+RESET => s[0].ACLR
+RESET => s[1].ACLR
+RESET => s[2].ACLR
+RESET => s[3].ACLR
+RESET => s[4].ACLR
+RESET => s[5].ACLR
+D[0] => Add0.IN6
+D[1] => Add0.IN5
+D[2] => Add0.IN4
+D[3] => Add0.IN3
+Y[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= s[1].DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= s[2].DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= s[3].DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= s[4].DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= s[5].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_incr|DispHEX:P2
+D[0] => SegDecoder:P2.D[0]
+D[1] => SegDecoder:P2.D[1]
+D[2] => SegDecoder:P2.D[2]
+D[3] => SegDecoder:P2.D[3]
+D[4] => SegDecoder:P1.D[0]
+D[5] => SegDecoder:P1.D[1]
+Y0[0] <= SegDecoder:P2.Y[0]
+Y0[1] <= SegDecoder:P2.Y[1]
+Y0[2] <= SegDecoder:P2.Y[2]
+Y0[3] <= SegDecoder:P2.Y[3]
+Y0[4] <= SegDecoder:P2.Y[4]
+Y0[5] <= SegDecoder:P2.Y[5]
+Y0[6] <= SegDecoder:P2.Y[6]
+Y1[0] <= SegDecoder:P1.Y[0]
+Y1[1] <= SegDecoder:P1.Y[1]
+Y1[2] <= SegDecoder:P1.Y[2]
+Y1[3] <= SegDecoder:P1.Y[3]
+Y1[4] <= SegDecoder:P1.Y[4]
+Y1[5] <= SegDecoder:P1.Y[5]
+Y1[6] <= SegDecoder:P1.Y[6]
+
+
+|top_incr|DispHEX:P2|SegDecoder:P1
+D[0] => Mux0.IN19
+D[0] => Mux1.IN19
+D[0] => Mux2.IN19
+D[0] => Mux3.IN19
+D[0] => Mux4.IN19
+D[0] => Mux5.IN19
+D[0] => Mux6.IN19
+D[1] => Mux0.IN18
+D[1] => Mux1.IN18
+D[1] => Mux2.IN18
+D[1] => Mux3.IN18
+D[1] => Mux4.IN18
+D[1] => Mux5.IN18
+D[1] => Mux6.IN18
+D[2] => Mux0.IN17
+D[2] => Mux1.IN17
+D[2] => Mux2.IN17
+D[2] => Mux3.IN17
+D[2] => Mux4.IN17
+D[2] => Mux5.IN17
+D[2] => Mux6.IN17
+D[3] => Mux0.IN16
+D[3] => Mux1.IN16
+D[3] => Mux2.IN16
+D[3] => Mux3.IN16
+D[3] => Mux4.IN16
+D[3] => Mux5.IN16
+D[3] => Mux6.IN16
+Y[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_incr|DispHEX:P2|SegDecoder:P2
+D[0] => Mux0.IN19
+D[0] => Mux1.IN19
+D[0] => Mux2.IN19
+D[0] => Mux3.IN19
+D[0] => Mux4.IN19
+D[0] => Mux5.IN19
+D[0] => Mux6.IN19
+D[1] => Mux0.IN18
+D[1] => Mux1.IN18
+D[1] => Mux2.IN18
+D[1] => Mux3.IN18
+D[1] => Mux4.IN18
+D[1] => Mux5.IN18
+D[1] => Mux6.IN18
+D[2] => Mux0.IN17
+D[2] => Mux1.IN17
+D[2] => Mux2.IN17
+D[2] => Mux3.IN17
+D[2] => Mux4.IN17
+D[2] => Mux5.IN17
+D[2] => Mux6.IN17
+D[3] => Mux0.IN16
+D[3] => Mux1.IN16
+D[3] => Mux2.IN16
+D[3] => Mux3.IN16
+D[3] => Mux4.IN16
+D[3] => Mux5.IN16
+D[3] => Mux6.IN16
+Y[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

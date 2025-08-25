@@ -1,0 +1,220 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+Ccfg_fcount_tb
+eFcount_tb
+abench
+DAx4 work 9 fcount_tb 5 bench 22 Ie?>G_M9oA<`N<22QnF981
+Z0 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 DEx4 work 9 fcount_tb 0 22 6UHJj[=]f<K7J;effB8Z`0
+Z4 w1699314918
+Z5 dC:/Users/asw18/Documents/ENSC252/Lab5
+Z6 8C:\Users\asw18\Documents\ENSC252\Lab5\Fcount_tb.vhd
+Z7 FC:\Users\asw18\Documents\ENSC252\Lab5\Fcount_tb.vhd
+l0
+L59
+Ved5f_50]R94YLc6P<mAG>3
+!s100 Pa;cBbi9anYlHXZMzG<of1
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1699314923
+!i10b 0
+Z10 !s108 1699314923.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\asw18\Documents\ENSC252\Lab5\Fcount_tb.vhd|
+Z12 !s107 C:\Users\asw18\Documents\ENSC252\Lab5\Fcount_tb.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Efcount
+R4
+R0
+R1
+R2
+R5
+Z15 8C:\Users\asw18\Documents\ENSC252\Lab5\Fcount.vhd
+Z16 FC:\Users\asw18\Documents\ENSC252\Lab5\Fcount.vhd
+l0
+L5
+VPG@7SJ64Xi:cbfZO[5@4T0
+!s100 abFDMUdj];ob^[6L=R71B2
+R8
+32
+R9
+!i10b 1
+R10
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\asw18\Documents\ENSC252\Lab5\Fcount.vhd|
+Z18 !s107 C:\Users\asw18\Documents\ENSC252\Lab5\Fcount.vhd|
+!i113 1
+R13
+R14
+Afcount_func
+R0
+R1
+R2
+DEx4 work 6 fcount 0 22 PG@7SJ64Xi:cbfZO[5@4T0
+l15
+L11
+V:if4f<HXDzOSFR[Q@1^fe3
+!s100 `SG=IgWfF;CHPf4UV`>OH1
+R8
+32
+R9
+!i10b 1
+R10
+R17
+R18
+!i113 1
+R13
+R14
+Efcount_tb
+R4
+R0
+R1
+R2
+R5
+R6
+R7
+l0
+L5
+V6UHJj[=]f<K7J;effB8Z`0
+!s100 i@kH1PhUU3@;Wj[l8OOQM2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Abench
+R0
+R1
+R2
+R3
+l26
+L8
+VIe?>G_M9oA<`N<22QnF981
+!s100 gMK=QiW>Q[[DMk`]@PkCf0
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Abehaviour
+R0
+R1
+R2
+DEx4 work 9 fcount_tb 0 22 O5>UTR@Gn3NbYVPz;=PQk0
+l24
+L8
+V]c<Tze<hSAL5<Ca:n[EIA1
+!s100 ;gae1A6e4M4N?JfPaSF>F3
+R8
+32
+!s110 1699314603
+!i10b 1
+!s108 1699314603.000000
+R11
+R12
+!i113 1
+R13
+R14
+w1699313673
+Eincr
+Z19 w1699311134
+R0
+R1
+R2
+R5
+Z20 8C:/Users/asw18/Documents/ENSC252/Lab5/incr.vhd
+Z21 FC:/Users/asw18/Documents/ENSC252/Lab5/incr.vhd
+l0
+L5
+VAo=ln1hEA80Z[H7[M^0?02
+!s100 46b<hX<ojYKb_eRbY8@RJ1
+R8
+32
+Z22 !s110 1699311331
+!i10b 1
+Z23 !s108 1699311331.000000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/asw18/Documents/ENSC252/Lab5/incr.vhd|
+Z25 !s107 C:/Users/asw18/Documents/ENSC252/Lab5/incr.vhd|
+!i113 1
+R13
+R14
+Aincr_func
+R0
+R1
+R2
+DEx4 work 4 incr 0 22 Ao=ln1hEA80Z[H7[M^0?02
+l14
+L10
+VCMS@1R:ckn3jMbT<jfQ;93
+!s100 aU@4N5YMdANGW]i7JI1LA1
+R8
+32
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R13
+R14
+Eincr_tb
+Z26 w1661351334
+R0
+R1
+R2
+R5
+Z27 8C:/Users/asw18/Documents/ENSC252/Lab5/incr_tb.vhd
+Z28 FC:/Users/asw18/Documents/ENSC252/Lab5/incr_tb.vhd
+l0
+L5
+V;lU=[z7I1PM@kSDmGElI:2
+!s100 [ai0[BmRfNB?18lMCkk=o1
+R8
+32
+R22
+!i10b 1
+R23
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/asw18/Documents/ENSC252/Lab5/incr_tb.vhd|
+Z30 !s107 C:/Users/asw18/Documents/ENSC252/Lab5/incr_tb.vhd|
+!i113 1
+R13
+R14
+Abehaviour
+R0
+R1
+R2
+DEx4 work 7 incr_tb 0 22 ;lU=[z7I1PM@kSDmGElI:2
+l22
+L8
+V@:XTUa@BMeRZS>_i51Z:]0
+!s100 dXdfO4e]8LgXL6`4MX6TG0
+R8
+32
+R22
+!i10b 1
+R23
+R29
+R30
+!i113 1
+R13
+R14
