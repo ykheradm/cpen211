@@ -1,0 +1,76 @@
+# Compile of ALU.sv was successful.
+# Compile of ALU.sv failed with 5 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_tb
+# vsim -gui work.ALU_tb 
+# Start time: 02:51:10 on Nov 03,2024
+# Loading sv_std.std
+# Loading work.ALU_tb
+# Loading work.ALU
+# ** Error: (vsim-3063) Port 'z' not found in the connected module (5th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /ALU_tb/dut File: C:/Users/umer/Desktop/lab5/ALU_tb.sv Line: 18
+# Error loading design
+# End time: 02:51:11 on Nov 03,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 28
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# ** Error: (vlog-11) Could not find C:/Users/umer/Desktop/lab5/work.regfile Primary.

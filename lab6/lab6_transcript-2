@@ -1,0 +1,127 @@
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of shifter.sv failed with 4 errors.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 1 failed with 4 errors.
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv failed with 5 errors.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv failed with 5 errors.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.shifter_tb
+# vsim -gui work.shifter_tb 
+# Start time: 07:23:35 on Nov 03,2024
+# Loading sv_std.std
+# Loading work.shifter_tb
+# Loading work.shifter
+add wave  \
+sim:/shifter_tb/err \
+sim:/shifter_tb/in_tb \
+sim:/shifter_tb/shift_tb \
+sim:/shifter_tb/sout_tb
+run -all
+# ** Note: $finish    : C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv(13)
+#    Time: 500 ps  Iteration: 0  Instance: /shifter_tb
+# 1
+# Break in Module shifter_tb at C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv line 13
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.shifter_tb
+# Loading work.shifter
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv(13)
+#    Time: 500 ps  Iteration: 0  Instance: /shifter_tb
+# 1
+# Break in Module shifter_tb at C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv line 13
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+run -all
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.shifter_tb
+# Loading work.shifter
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Wrong got 0000000000000000 , expected 0000000000000001
+# Wrong got 0110011101000000 , expected 0110011101000001
+# Wrong got 0101010101010100 , expected 0101010101010101
+# ** Note: $finish    : C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv(13)
+#    Time: 500 ps  Iteration: 0  Instance: /shifter_tb
+# 1
+# Break in Module shifter_tb at C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv line 13
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Wrong got 0000000000000000 , expected 0000000000000001
+# Wrong got 0110011101000000 , expected 0110011101000001
+# Wrong got 0101010101010100 , expected 0101010101010101
+# ** Note: $finish    : C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv(13)
+#    Time: 500 ps  Iteration: 0  Instance: /shifter_tb
+# 1
+# Break in Module shifter_tb at C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv line 13
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Load canceled
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.shifter_tb
+# Loading work.shifter
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv(13)
+#    Time: 500 ps  Iteration: 0  Instance: /shifter_tb
+# 1
+# Break in Module shifter_tb at C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv line 13
+# Compile of shifter.sv was successful.
+# Compile of shifter_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.shifter_tb
+# Loading work.shifter
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv(13)
+#    Time: 500 ps  Iteration: 0  Instance: /shifter_tb
+# 1
+# Break in Module shifter_tb at C:/Users/umer/Desktop/lab5_shift/shifter_tb.sv line 13
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/umer/Desktop/lab5_shift/wave.do
+quit -sim
+# End time: 01:02:09 on Nov 04,2024, Elapsed time: 17:38:34
+# Errors: 0, Warnings: 1

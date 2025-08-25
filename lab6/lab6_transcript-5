@@ -1,0 +1,9 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# vsim -gui C:\lab5\regfile.sv 
+# Start time: 00:53:44 on Aug 25,2025
+# ** Error: (vsim-3170) Could not find 'C:\lab5\regfile.sv'.
+#         Searched libraries:
+#             C:/lab5/work
+# Error loading design
+# End time: 00:53:45 on Aug 25,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0

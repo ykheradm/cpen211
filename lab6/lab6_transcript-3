@@ -1,0 +1,80 @@
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_tb
+# vsim -gui work.ALU_tb 
+# Start time: 01:38:39 on Nov 04,2024
+# Loading sv_std.std
+# Loading work.ALU_tb
+# Loading work.ALU
+add wave  \
+sim:/ALU_tb/Ain_tb \
+sim:/ALU_tb/ALUop_tb \
+sim:/ALU_tb/Bin_tb \
+sim:/ALU_tb/err \
+sim:/ALU_tb/out_tb \
+sim:/ALU_tb/Z_tb
+run -all
+# ** Note: $finish    : C:/Users/umer/Downloads/lab5_ALU/ALU_tb.sv(17)
+#    Time: 500 ps  Iteration: 0  Instance: /ALU_tb
+# 1
+# Break in Module ALU_tb at C:/Users/umer/Downloads/lab5_ALU/ALU_tb.sv line 17
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.ALU_tb
+# Loading work.ALU
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/Users/umer/Downloads/lab5_ALU/ALU_tb.sv(17)
+#    Time: 500 ps  Iteration: 0  Instance: /ALU_tb
+# 1
+# Break in Module ALU_tb at C:/Users/umer/Downloads/lab5_ALU/ALU_tb.sv line 17
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.ALU_tb
+# Loading work.ALU
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Wrong got 1011101110111011 , expected 0100010001000100
+# ** Note: $finish    : C:/Users/umer/Downloads/lab5_ALU/ALU_tb.sv(17)
+#    Time: 500 ps  Iteration: 0  Instance: /ALU_tb
+# 1
+# Break in Module ALU_tb at C:/Users/umer/Downloads/lab5_ALU/ALU_tb.sv line 17
+quit -sim
+# End time: 01:52:03 on Nov 04,2024, Elapsed time: 0:13:24
+# Errors: 0, Warnings: 1
+# Compile of ALU.sv was successful.
+# Compile of ALU_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.ALU_tb
+# vsim -gui work.ALU_tb 
+# Start time: 01:54:06 on Nov 04,2024
+# Loading sv_std.std
+# Loading work.ALU_tb
+# Loading work.ALU
+add wave  \
+sim:/ALU_tb/Ain_tb \
+sim:/ALU_tb/ALUop_tb \
+sim:/ALU_tb/Bin_tb \
+sim:/ALU_tb/err \
+sim:/ALU_tb/out_tb \
+sim:/ALU_tb/Z_tb
+run -all
+# ** Note: $finish    : C:/Users/umer/Downloads/lab5_ALU/ALU_tb.sv(17)
+#    Time: 500 ps  Iteration: 0  Instance: /ALU_tb
+# 1
+# Break in Module ALU_tb at C:/Users/umer/Downloads/lab5_ALU/ALU_tb.sv line 17
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/umer/Downloads/lab5_ALU/wave.do
+# End time: 01:58:01 on Nov 04,2024, Elapsed time: 0:03:55
+# Errors: 0, Warnings: 2

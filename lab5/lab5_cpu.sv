@@ -1,0 +1,238 @@
+`define MNONE  2'b00
+`define MREAD  2'b01
+`define MWRITe 2'b10
+
+
+module cpu(clk, reset, s, load, in, out, N, V, Z, w,mem_addr,mem_cmd);
+    input clk, reset, s, load;
+    input [15:0] in;
+    output [15:0] out;
+    output N, V, Z, w;
+    output reg [1:0] mem_cmd;
+    output reg [8:0] mem_addr;
+    reg [15:0] out;
+    reg  w;
+    reg N, V, Z;
+
+    reg [15:0] instruction, sximm8, sximm5; 
+    reg [1:0] op, vsel, shift;
+    reg [2:0] opcode, readnum, writenum, nsel;
+    reg asel, bsel, loada, loadb, loadc, loads, write,csel;
+    reg [7:0] PC; /// check
+    reg [8:0] next_pc, data_addr; // use same name as figurre 4 and 3
+  
+    reg [15:0] mdata;
+
+    wire [2:0] Rm, Rd, Rn;
+    reg [2:0] Z_out;
+    reg [3:0] state, next_state; // double check
+    reg load_pc,reset_pc,load_ir,load_adr,addr_sel;
+   wire [15:0] C;
+
+    // Datapath instantiation
+    datapath DP (
+        .clk(clk),
+        .readnum(readnum),
+        .vsel(vsel),
+        .loada(loada),
+        .loadb(loadb),
+        .shift(shift),
+        .asel(asel),
+        .bsel(bsel),
+        .ALUop(op),
+        .loadc(loadc),
+        .loads(loads),
+        .writenum(writenum),
+        .write(write),
+        .Z_out(Z_out),
+        .sximm5(sximm5),
+        .sximm8(sximm8),
+        .PC(PC),
+        .mdata(mdata),
+        .C(C)
+    );
+
+     always @(*) begin
+	
+         Z=Z_out[0];
+         N=Z_out[1];
+         V= Z_out[2];
+    end
+   
+        
+
+    
+    always @(*) begin
+        out = C;
+    end
+
+    // Instruction Register
+    always @(posedge clk ) begin
+       if (load)
+            instruction <= in;
+    end
+
+    // Instruction Decoder
+    assign Rm = instruction[2:0];
+    assign Rd = instruction[7:5];
+    assign Rn = instruction[10:8];
+
+    always @(*) begin  
+        opcode = instruction[15:13];
+        op = instruction[12:11];
+        shift = instruction[4:3];
+        sximm5 = (instruction[4] == 0) ? {11'b00000000000, instruction[4:0]} : {11'b11111111111, instruction[4:0]};
+        sximm8 = (instruction[7] == 0) ? {8'b00000000, instruction[7:0]} : {8'b11111111, instruction[7:0]};
+
+        case (nsel)
+            3'b001: begin
+                readnum = Rm;
+                writenum = Rm;
+            end
+            3'b010: begin
+                readnum = Rd;
+                writenum = Rd;
+            end
+            3'b100: begin
+                readnum = Rn;
+                writenum = Rn;
+            end
+            default: begin
+                readnum = Rn;
+                writenum = Rn;
+            end
+        endcase
+    end
+
+
+
+
+
+`define Decode      4'b1101
+`define GetB       4'b0011
+`define ALUOp      4'b0100
+`define WriteReg   4'b0101
+`define WriteImm   4'b0110
+`define UpdateFlags 4'b0111
+`define Shift      4'b1000
+`define forgotten_mov 4'b1111
+
+`define pc_load        4'b1100
+`define RST 4'b1001
+`define IF1 4'b1010
+`define IF2 4'b1011
+
+
+//LDR STR CMP HALT
+`define    5'b10000
+`define    5'b10001
+`define    5'b10010
+`define    5'b10011
+`define    5'b10100
+
+
+always @(posedge clk) begin
+
+   {write,loada,loadb,loadc,loads,load_ir,load_adr,asel,bsel}=0;
+     nsel=0;
+     vsel=0;
+
+    
+    if (reset == 1)
+        state = `RST;
+    else begin
+        case (state)
+    `RST: begin
+mem_cmd=`MNONE ; 
+reset_pc=1; 
+load_pc=1; 
+state = `IF1;
+       end     
+      `IF1:  begin  
+        
+       addr_sel=1;
+       mem_cmd=`MREAD; 
+       reset_pc=0;  // put everything back to where it was 
+       load_pc=0; 
+       state=`IF2;
+
+end 
+       `IF2: begin
+         addr_sel=1;
+         load_ir=1;
+         mem_cmd=`MREAD;
+
+       end         
+   `pc_load: 
+      addr_sel=0;
+      load_ir=0;
+    load_pc=1;
+    mem_cmd=`MNONE; // ok npw we got our instruction at the dout output of the mem
+    state= `Decode;
+begin 
+
+
+ end 
+
+`Decode:
+load_pc=0;
+w=1;
+            if (s==1)begin
+             w=0;
+                    casex ({opcode, op})
+                        5'b110_00: state = `Decode;    // MOV Rd, Rm {,<sh_op>}
+                        5'b110_10: state = `WriteImm; // MOV Rn, #<im8>
+                        5'b101_00: state = `Decode;    // ADD Rd, Rn, Rm {,<sh_op>}
+                        5'b101_01: state = `Decode;    // CMP Rn, Rm {,<sh_op>}
+                        5'b101_10: state = `Decode;    // AND Rd, Rn, Rm {,<sh_op>}
+                        5'b101_11: state = `Decode;    // MVN Rd, Rm {,<sh_op>}
+                        default: state = `RST;         // Remain in Wait state
+                    endcase
+                end
+    end     
+
+`Decode: state = `GetB;
+`GetB: state = `ALUOp;
+
+`ALUOp : begin
+           
+                // Determine next state based on opcode and op
+                casex ({opcode, op})
+                    5'b110_00: state = `forgotten_mov; //MOV with shift
+                    5'b101_00: state = `WriteReg;    // ADD Rd, Rn, Rm
+                    5'b101_10: state = `WriteReg;    // AND Rd, Rn, Rm
+                    5'b101_01: state = `UpdateFlags; // CMP Rn, Rm
+                    5'b101_11: state = `WriteReg;    // MVN Rd, Rm
+                    default: state = `Wait;
+                endcase
+            end
+`forgotten_mov: state =`IF2;
+`WriteReg:  state = `Wait;
+`WriteImm:  state = `Wait;         
+`UpdateFlags:state = `Wait;
+`Shift:   state = `Wait;
+default:  state = `Wait;
+
+        endcase
+
+ case (state)
+    
+// `Wait     :   {w, write, asel, bsel, vsel, nsel, loada, loadb, loadc, loads} = 13'b1_0_0_0_00_001_0_0_0_0; // Rm
+`forgotten_mov:{w, write, asel, bsel, vsel, nsel, loada, loadb, loadc, loads} = 13'b0_0_1_0_00_001_0_1_0_0;
+`Decode    :   {w, write, asel, bsel, vsel, nsel, loada, loadb, loadc, loads} = 13'b0_0_0_0_00_100_1_0_0_0; // Rn load a =1 loadRn to A
+`GetB      :   {w, write, asel, bsel, vsel, nsel, loada, loadb, loadc, loads} = 13'b0_0_0_0_00_001_0_1_0_0; // Rm loadb=1 load Rm to B
+`ALUOp     :   {w, write, asel, bsel, vsel, nsel, loada, loadb, loadc, loads} = 13'b0_0_0_0_00_000_0_0_1_0; //     loadc=1 load result into C
+`WriteReg  :   {w, write, asel, bsel, vsel, nsel, loada, loadb, loadc, loads} = 13'b0_1_0_0_00_010_0_0_0_0; // Rd write=1 write the ALUop result = vsel=00 =C into Rd
+`WriteImm  :   {w, write, asel, bsel, vsel, nsel, loada, loadb, loadc, loads} = 13'b0_1_0_0_10_100_0_0_0_0; // Rn ,sximm8 ,write=1 MOV Rn, #<im8>  deal with immidate values 
+`UpdateFlags :  {w, write, asel, bsel, vsel, nsel, loada, loadb, loadc, loads} = 13'b0_0_0_0_00_000_0_0_0_1; //loads=1 update the flag for cmp
+`Shift       :  ;
+ default: {w, write, asel, bsel, vsel, nsel, loada, loadb, loadc, loads} = 13'b0_0_0_0_00_000_0_0_0_0;
+endcase // output 
+
+ 
+
+    end
+end
+endmodule
+
+
